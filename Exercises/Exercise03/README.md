@@ -1,10 +1,20 @@
-# Basic Ingestion (II) - HTTP to File, with data manipulation
+# NiFi: Basic Ingestion (II) - HTTP to File, with data manipulation
+
+## Introduction
 
 In this exercise we will get "batch data" from an open data source and store into file, performing some simple "data preparation":
 
 HTTP service --> NiFi --> File
 
-# Details
+## Pre-requisites
+
+Launch Apache NiFi:
+
+```shell
+docker-compose start nifi
+```
+
+## Exercise
 
 In this exercise we will not only move data (from HTTP to File), but also do some basic transformations:
 

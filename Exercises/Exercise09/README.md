@@ -1,10 +1,10 @@
-# Exercise 2: Advanced CDC
+# Debezium: Advanced CDC
 
 ## Introduction
 
 We will now reconfigure the connector and do some more complex changes.
 
-## Initial setup
+## Pre-requisites
 
 We will need the same consoles (or UIs) as in the previous exercise:
 

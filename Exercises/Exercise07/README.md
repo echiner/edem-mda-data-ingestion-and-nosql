@@ -1,4 +1,6 @@
-# Introduction
+# Debezium: Setup
+
+## Introduction
 
 <img width="150" src="https://new.paradigmadigital.com/wp-content/uploads/2017/06/debezium-1.png">
 
@@ -10,7 +12,7 @@ FYI, we will follow similar steps as defined in the Debezium tutorial, in case y
 
 * http://debezium.io/docs/tutorial/
 
-# Initial setup
+## Pre-requisites
 
 Run the docker containers with Docker Compose.
 
@@ -30,8 +32,9 @@ export DEBEZIUM_VERSION="2.7"
 Now **start the containers**:
 
 ```shell
-docker compose up -d
+docker compose start zookeeper kafka kafka-ui mysql adminer
 ```
+## Exercise
 
 And **install the Debezium connector** in Kafka Connect:
 
@@ -49,14 +52,6 @@ Do some final checks:
 
 **NOTE**: All the component URLs and credentials required are defined below in the "Understanding the components" section.
 
-# Exercises
-
-* [**Exercise 1**: Basic CDC](Exercises/Exercise1)
-* [**Exercise 2**: Complex CDC](Exercises/Exercise2)
-* [**Exercise 3**: Message filtering with SMT](Exercises/Exercise3)
-* [**Exercise 4** (Optional): End to end flow](Exercises/Exercise4)
-* [**Post Work**: Run the Attunity tutorial](Exercises/PostWork)
-
 # Understanding the components
 
 In this installation we have the following components:
@@ -68,40 +63,4 @@ In this installation we have the following components:
 * **MySQL**: Open-source database, which will be the data source
 * **Adminer (MySQL UI)**: Web-base front-end to brower and interact with the database
 
-This is the config we have in the Docker Compose:
-
-| Component | Service | Ports | URL/Comments |
-| ------------- | ------------- | ------------- | ------------- |
-| **Kafka** | kafka | 9092  | N/A  |
-| **Zookeeper** | zookeeper | 2181, 2888 and 3888  | N/A  |
-| **Kafka Connect** | connect | 8083  | N/A  |
-| **Kafka UI** | redpanda-console | 9000 | http://localhost:9000/ |
-| **MySQL** | mysql | 3306  | **Server**: mysql<br/>**Credentials**: mysqluser/mysqlpw  |
-| **Adminer (MySQL UI)** | adminer | 8090  | http://localhost:8090/  |
-
-# Shut down and destroy
-
-```
-# Shut down the cluster
-docker-compose down
-```
-
-If you only want to stop the cluster (not destroy) use the stop command, and start to bring it up again:
-
-```
-# Stop the cluster
-docker-compose stop
-
-# Start the cluster
-docker-compose start
-```
-
-You can also stop a specific service:
-
-```
-# Stop a service
-docker-compose stop <service>
-
-# Start a service
-docker-compose start <service>
-```
+# Resources

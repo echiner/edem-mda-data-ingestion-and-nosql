@@ -1,4 +1,18 @@
-# Building your first Data Flow - File to File
+# NiFi: Building your first Data Flow - File to File
+
+## Introduction
+
+This will be you first exercise with Apache NiFi, and it is a simple workflow to move files from one folder to another.
+
+## Pre-requisites
+
+Launch Apache NiFi:
+
+```shell
+docker-compose start nifi
+```
+
+## Exercise
 
 In this exercise we will create our first NiFi workflow:
 

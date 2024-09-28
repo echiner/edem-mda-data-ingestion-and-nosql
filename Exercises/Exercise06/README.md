@@ -1,4 +1,6 @@
-# Ingesting real-time data
+# NiFi: Ingesting real-time data (Optional)
+
+## Introduction
 
 In this exercise we will read data in real-time (e.g. Twitter), and store in HDFS:
 
@@ -35,7 +37,7 @@ For example:
 
 If you don't want to use Twitter and you don't find any real-time data source, feel free to create any other *more or less complex" workflow.
 
-# Deliverables
+## Deliverables
 
 This is what you will have to deliver:
 

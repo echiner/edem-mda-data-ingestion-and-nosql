@@ -1,10 +1,20 @@
-# GDELT Data Ingesiton
+# NiFi: GDELT Data Ingesiton (Optional)
+
+## Introduction
 
 In this exercise we will load data from GDELT. The [**GDELT Project**](https://www.gdeltproject.org/) is a realtime network diagram and database of global human society for open research.
 
 The GDELT Project monitors the world's broadcast, print, and web news from nearly every corner of every country in over 100 languages and identifies the people, locations, organizations, themes, sources, emotions, counts, quotes, images and events driving our global society every second of every day, creating a free open platform for computing on the entire world.
 
-# Details
+## Pre-requisites
+
+Launch Apache NiFi:
+
+```shell
+docker-compose start nifi
+```
+
+## Exercise
 
 On this exercise you are on your own, but here are some recommendations:
 

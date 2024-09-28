@@ -14,13 +14,6 @@ services:
     volumes:
       - ./data:/tmp/data
     
-  nifi-registry:
-    image: apache/nifi-registry:latest
-    container_name: nifiregistry
-    restart: always
-    ports:
-      - 18080:18080
-
   zookeeper:
     image: debezium/zookeeper:${DEBEZIUM_VERSION}
     ports:

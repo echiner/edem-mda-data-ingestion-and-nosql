@@ -1,12 +1,14 @@
-# Exercise 1: Basic CDC
+# Debezium: Basic CDC
 
 ## Introduction
 
 In this exercise we will start playing around with Debezium and do our first CDC by updating a table row in MySQL and seeing it flow in real time in Kafka.
 
-## Initial setup
+## Pre-requisites
 
-First, let's **connect to the "customers" Kafka topic**, to listen to new messages (feel free to use the Kafka UI if you will):
+Follow the steps in the setup exercise (previous to this one) to launch the required components.
+
+Now, let's **connect to the "customers" Kafka topic**, to listen to new messages (feel free to use the Kafka UI if you will):
 
 ```shell
 # Consume messages from a Debezium topic ("dbserver1.inventory.customers")
@@ -23,7 +25,7 @@ docker-compose exec mysql bash -c 'mysql -u $MYSQL_USER -p$MYSQL_PASSWORD invent
 docker-compose exec mysql bash -c 'mysql -u ${MYSQL_USER} -p${MYSQL_PASSWORD} inventory'
 ```
 
-## Data flowing
+## Exercise
 
 First of all, ensure both terminals (Kafka consumer & MySQL client) are active and visible at the same time. This way, when you make changes in MySQL, you can immediately see the effects in Kafka.
 

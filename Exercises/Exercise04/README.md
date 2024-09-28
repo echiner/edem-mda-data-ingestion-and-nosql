@@ -1,4 +1,6 @@
-# Complex Ingestion - Real-time Flights
+# NiFi: Complex Ingestion - Real-time Flights
+
+## Introduction
 
 In this excercise we will get "real-time" (live data, but through polling) from [AviationStack](https://aviationstack.com/) and store the indidual flights.
 
@@ -10,7 +12,7 @@ In more detail, here is what we will do:
 
 With this, we will check two different ways of checking the same data (flights landing in Madrid and Barcelona).
 
-# Pre-requisite
+## Pre-requisites
 
 Setup a free account in AviationStack:
 
@@ -19,7 +21,14 @@ Setup a free account in AviationStack:
 * Select the "Free" plan and click on "SIGN UP"
 * Fill out the form
 
-# Details
+Launch Apache NiFi and MongoDB:
+
+```shell
+docker-compose start nifi mongo mongo-express
+```
+
+
+## Exercise
 
 For this exercise, given the complexity we have provided a template with all the required processors, and you will just jave to configure and connect them.
 
@@ -57,7 +66,7 @@ To finish, run the flow and confirm that the data is stored in both places:
 
 **IMPORTANT TIP**: Take a look at the documentation of the different processors in order to understand both the configuration parameters and the relationships (outputs). For example, [SplitJson](https://nifi.apache.org/docs/nifi-docs/components/org.apache.nifi/nifi-standard-nar/1.12.1/org.apache.nifi.processors.standard.SplitJson/).
 
-# Reference
+## Reference
 
 Here is how the flow should more or less look like once finished:
 

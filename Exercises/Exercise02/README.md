@@ -1,8 +1,20 @@
-# Basic Ingestion (I) - HTTP to File
+# NiFi: Basic Ingestion (I) - HTTP to File
+
+## Introduction
 
 In this exercise we will get "batch data" from an open data source and store into the file system:
 
 HTTP service --> NiFi --> File
+
+## Pre-requisites
+
+Launch Apache NiFi:
+
+```shell
+docker-compose start nifi
+```
+
+## Exercise
 
 This will be the data source (Valencia Open Data - ValenBisi Availability):
 
