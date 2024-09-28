@@ -1,4 +1,4 @@
-# Debezium: Basic CDC
+# Debezium: Basic Change Data Capture
 
 ## Introduction
 

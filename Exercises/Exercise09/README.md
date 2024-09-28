@@ -1,10 +1,12 @@
-# Debezium: Advanced CDC
+# Debezium: Advanced Change Data Capture
 
 ## Introduction
 
 We will now reconfigure the connector and do some more complex changes.
 
 ## Pre-requisites
+
+Follow the steps in the setup exercise (previous to this one) to launch the required components.
 
 We will need the same consoles (or UIs) as in the previous exercise:
 

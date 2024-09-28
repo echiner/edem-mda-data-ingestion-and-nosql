@@ -32,7 +32,7 @@ export DEBEZIUM_VERSION="2.7"
 Now **start the containers**:
 
 ```shell
-docker compose start zookeeper kafka kafka-ui mysql adminer
+docker compose start zookeeper kafka connect kafka-ui mysql adminer
 ```
 ## Exercise
 
@@ -56,11 +56,15 @@ Do some final checks:
 
 In this installation we have the following components:
 
-* **Kafka**: Message broker, used for building real-time data pipelines and streaming apps. It is horizontally scalable, fault-tolerant and wicked fast
-* **Zookeeper**: Open-source server which enables highly reliable distributed coordination
-* **Kafka Connect**: MySQL Debezium connector, which reads the MySQL logs and sends data to a Kafka topic
-* **Kafka UI (a.k.a. Redpanda Console)**: UI to visualize the cluster, topics, messages and connectors
-* **MySQL**: Open-source database, which will be the data source
-* **Adminer (MySQL UI)**: Web-base front-end to brower and interact with the database
+* **Kafka**: Message broker we will use to send real-time update messages from Debezium
+* **Zookeeper**: Required for Kafka to run. You can ignore it for the time being
+* **Kafka Connect**: This is where Debezium will run and will connect to MySQL to get the real-time updates
+* **Kafka UI (a.k.a. Redpanda Console)**: UI to visualize Kafka: topics, messages and connectors
+* **MySQL**: Database we will be using as the source
+* **Adminer (MySQL UI)**: UI to view the database, tables, etc. No 100% required since you could do it using the command line
 
 # Resources
+
+* **Debezium**: https://debezium.io/
+* **Apache Kafka**: https://kafka.apache.org/
+* **MySQL**: https://www.mysql.com/
