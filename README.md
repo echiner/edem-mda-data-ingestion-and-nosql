@@ -5,27 +5,39 @@ In this course we learn how to ingest data using [Apache NiFi](https://nifi.apac
 
 ## Introduction
 
-TBD
+Throughout these three sessions (Data Ingestion with NiFi, CDC with Debezium, and NoSQL with MongoDB), we will work through a series of interconnected exercises. By the end, we will have completed an end-to-end project that integrates all the components.
+
+We'll begin by using Apache NiFi to ingest data and store it in MongoDB. Next, we'll explore real-time data ingestion from databases using Debezium. Finally, we'll dive deeper into MongoDB, performing queries, setting up indexes, and more.
 
 ## Initial Setup
 
-We will be using the Docker Compose in this root folder, so start the Docker Compose components:
+We will be using the Docker Compose in this root folder. Let's start by downloading all the services (images):
 
 ```shell
-docker-compose up -d
+docker compose pull
 ```
 
-```shell
-# List the running services
-docker ps
+Find below the list components which we will be using:
 
-# Stop a specific service
-docker-compose stop <SERVICE>
-```
+| Component  | Description | Docker Service | Port |
+| ------------- | ------------- | ------------- | ------------- |
+| **Apache NiFi**  | Data flow and integration tool | nifi  |  [8443](https://localhost:8443/nifi) |
+| **Kafka** | Distributed event streaming platform | kafka | 9092 |
+| **Zookeeper** | Coordination service for Kafka and other distributed systems | zookeeper | 2181, 2888, and 3888 |
+| **Kafka Connect** | Tool for scalable and reliable data streaming between Kafka and other systems | connect | 8083 |
+| **Kafka UI** | Web UI to manage Kafka topics and consumer groups | redpanda-console | 9000 |
+| **MySQL** | Relational database management system | mysql | 3306 |
+| **Adminer (MySQL UI)** | Web-based database management tool | adminer | 8090 |
+| **MongoDB** | NoSQL database system | mongo | 27017 |
+| **MongoDB Express - UI** | Web-based MongoDB administration tool | mongo-express | [8081](http://localhost:8081/) |
 
-Finde below the list of services with a description of each one.
+Here is a view of the architecture we will be using:
+
+![Architecture](img/architecture.png)
 
 ## Exercises
+
+Here is the list of exercises we will follow:
 
 * [**Exercise 1**: NiFi - Building our first Data Flow - File to File](Exercises/Exercise01)
 * [**Exercise 2**: NiFi - Basic Ingestion (I) - HTTP to File](Exercises/Exercise02)
@@ -44,36 +56,34 @@ Finde below the list of services with a description of each one.
 * [**Exercise 15**: Neo4j - Demo](Exercises/Exercise15)
 * [**Exercise 16**: End-to-end Project: Data Ingestion, CDC and NOSQL (Optional)](Exercises/Exercise16)
 
+ **Optional exercises** are more advanced, and will be done during the class if we have time. Otherwise they will optional for the trainee to do as homework.
 
-## Understanding the components
+# Cluster administration
 
-We will be using the same Docker Compose throught the three sessions, and these are the components which will be launched:
+Here are some useful commands you might need:
 
-* **Apache NiFi**: Ingestion tool used in the course
-* **Kafka**: Message broker for streaming data
-* **Kafka UI**: Web UI for monitoring and managing Kafka topics (we will be using the Redpanda Console)
-* **Kafka Connect**: Apache Kafka Connectors for ingesting data from external systems
-* **Debezium**: CDC open-source tool for ingesting data from databases, which will run as a Kafka Connect source connector
-* **MongoDB**: NOSQL document database for storing JSON
-* **MongoDB Express**: Basic MongoDB front-end for viewing and searching data
-
-Here is the list of components and ports:
-
-| Component  | Docker Service | Port |
-| ------------- | ------------- | ------------- |
-| **Apache NiFi**  | nifi  |  [8443](https://localhost:8443/nifi) |
-| **Kafka** | kafka | 9092  | N/A  |
-| **Zookeeper** | zookeeper | 2181, 2888 and 3888  | N/A  |
-| **Kafka Connect** | connect | 8083  | N/A  |
-| **Kafka UI** | redpanda-console | 9000 | http://localhost:9000/ |
-| **MySQL** | mysql | 3306  | **Server**: mysql<br/>**Credentials**: mysqluser/mysqlpw  |
-| **Adminer (MySQL UI)** | adminer | 8090  | http://localhost:8090/  |
-| **MongoDB**   | mongo  | 27017  |
-| **MongoDB Express - UI**   | mongo-express  | [8081](http://localhost:8081/)  |
-
-## Shut down and destroy
-
+```shell
+# Launch all services for the first time
+docker-compose up -d
 ```
-# Shut down the cluster
+
+```shell
+# Shut down and destroy the cluster
 docker-compose down
 ```
+
+```shell
+# Start a specific service
+docker-compose start <SERVICE>
+```
+
+```shell
+# Stop a specific service
+docker-compose stop <SERVICE>
+```
+
+```shell
+# List the running services
+docker ps
+```
+
