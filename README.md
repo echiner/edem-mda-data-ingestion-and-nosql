@@ -64,22 +64,22 @@ Here are some useful commands you might need:
 
 ```shell
 # Launch all services for the first time
-docker-compose up -d
+docker compose up -d
 ```
 
 ```shell
 # Shut down and destroy the cluster
-docker-compose down
+docker compose down
 ```
 
 ```shell
 # Start a specific service
-docker-compose start <SERVICE>
+docker compose start <SERVICE>
 ```
 
 ```shell
 # Stop a specific service
-docker-compose stop <SERVICE>
+docker compose stop <SERVICE>
 ```
 
 ```shell

@@ -11,7 +11,7 @@ HTTP service --> NiFi --> File
 Launch Apache NiFi:
 
 ```shell
-docker-compose start nifi
+docker compose up -d nifi
 ```
 
 ## Exercise
@@ -19,7 +19,7 @@ docker-compose start nifi
 In this exercise we will not only move data (from HTTP to File), but also do some basic transformations:
 
 * Split the file, using the **SplitText** processor
-  * Split every 1000 rows
+  * Split every 100 rows
 * Rename the file, using the **UpdateAttribute** processor
   * Example renaming: `EDEM-${filename}-${nextInt()}.txt`
 

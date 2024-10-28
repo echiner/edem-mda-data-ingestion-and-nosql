@@ -11,7 +11,7 @@ HTTP service --> NiFi --> File
 Launch Apache NiFi:
 
 ```shell
-docker-compose start nifi
+docker compose up -d nifi
 ```
 
 ## Exercise

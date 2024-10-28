@@ -12,17 +12,17 @@ Now, let's **connect to the "customers" Kafka topic**, to listen to new messages
 
 ```shell
 # Consume messages from a Debezium topic ("dbserver1.inventory.customers")
-docker-compose exec kafka /kafka/bin/kafka-console-consumer.sh --bootstrap-server kafka:9092 --from-beginning --property print.key=true --topic dbserver1.inventory.customers
+docker compose exec kafka /kafka/bin/kafka-console-consumer.sh --bootstrap-server kafka:9092 --from-beginning --property print.key=true --topic dbserver1.inventory.customers
 ```
 
 And then, in a different shell screen, **login to the MySQL CLI** (feel free to use the Adminer UI if you will):
 
 ```shell
 # Modify records in the database via MySQL client (PowerShell)
-docker-compose exec mysql bash -c 'mysql -u $MYSQL_USER -p$MYSQL_PASSWORD inventory'
+docker compose exec mysql bash -c "mysql -u $MYSQL_USER -p$MYSQL_PASSWORD inventory"
 
 # Modify records in the database via MySQL client (Command Line)
-docker-compose exec mysql bash -c 'mysql -u ${MYSQL_USER} -p${MYSQL_PASSWORD} inventory'
+docker compose exec mysql bash -c 'mysql -u ${MYSQL_USER} -p ${MYSQL_PASSWORD} inventory'
 ```
 
 ## Exercise

@@ -9,7 +9,7 @@ This will be you first exercise with Apache NiFi, and it is a simple workflow to
 Launch Apache NiFi:
 
 ```shell
-docker-compose start nifi
+docker compose up -d nifi
 ```
 
 ## Exercise
@@ -20,8 +20,8 @@ File --> NiFi --> File
 
 It will be a guided exercise, while explaining the different concepts by the teacher.
 
-You will be using the directories in the `data` folder.
-At the end of the exercise the workflow should loook something like this:
+You will be using the directories in the [`data`](../../data/) folder.
+At the end of the exercise the workflow should look something like this:
 
 ![Workflow](../../img/exercise1.png)
 

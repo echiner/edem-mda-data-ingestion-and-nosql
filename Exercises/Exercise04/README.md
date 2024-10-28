@@ -24,13 +24,13 @@ Setup a free account in AviationStack:
 Launch Apache NiFi and MongoDB:
 
 ```shell
-docker-compose start nifi mongo mongo-express
+docker compose up -d nifi mongo mongo-express
 ```
 
 
 ## Exercise
 
-For this exercise, given the complexity we have provided a template with all the required processors, and you will just jave to configure and connect them.
+For this exercise, given the complexity we have provided a template that includes all the necessary processors. You only need to configure and connect them.
 
 First, load and insert the template called `aviationstack-template.xml`. Here you have more info on [importing templates](https://nifi.apache.org/docs/nifi-docs/html/user-guide.html#Import_Template).
 
@@ -65,6 +65,10 @@ To finish, run the flow and confirm that the data is stored in both places:
 * **File**: You should see the files being generated in the local folder called "data".
 
 **IMPORTANT TIP**: Take a look at the documentation of the different processors in order to understand both the configuration parameters and the relationships (outputs). For example, [SplitJson](https://nifi.apache.org/docs/nifi-docs/components/org.apache.nifi/nifi-standard-nar/1.12.1/org.apache.nifi.processors.standard.SplitJson/).
+
+**Stop the flow**: Make sure to stop the flow once you have verified that everything is working as expected and the data is being stored correctly. Otherwise, you will be consuming resources and potentially hitting the API limits. 
+
+**Save the template**: Once you have finished, resave your Nifi flow with your added configurations as a template. This will allow you to reuse it for the [Exercise 10](../Exercise11/README.md).
 
 ## Reference
 

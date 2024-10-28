@@ -1,4 +1,4 @@
-# NiFi: GDELT Data Ingesiton (Optional)
+# NiFi: GDELT Data Ingestion (Optional)
 
 ## Introduction
 
@@ -11,7 +11,7 @@ The GDELT Project monitors the world's broadcast, print, and web news from nearl
 Launch Apache NiFi:
 
 ```shell
-docker-compose start nifi
+docker compose up -d nifi
 ```
 
 ## Exercise
