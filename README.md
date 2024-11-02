@@ -87,3 +87,9 @@ docker compose stop <SERVICE>
 docker ps
 ```
 
+# Authors
+
+This course and exercises were created by:
+
+* [Franzi Kröger](https://github.com/frkroe)
+* [Esteban Chiner](https://github.com/echiner)

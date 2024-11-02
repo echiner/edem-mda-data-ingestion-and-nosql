@@ -14,14 +14,14 @@ services:
     user: "0:0"
     
   zookeeper:
-    image: debezium/zookeeper:2.7
+    image: debezium/zookeeper:2.7.3.Final
     ports:
      - 2181:2181
      - 2888:2888
      - 3888:3888
 
   kafka:
-    image: debezium/kafka:2.7
+    image: debezium/kafka:2.7.3.Final
     ports:
      - 9092:9092
     links:
@@ -30,7 +30,7 @@ services:
      - ZOOKEEPER_CONNECT=zookeeper:2181
 
   mysql:
-    image: debezium/example-mysql:2.7
+    image: debezium/example-mysql:2.7.3.Final
     ports:
      - 3306:3306
     environment:
@@ -45,7 +45,7 @@ services:
       - 8090:8080
 
   connect:
-    image: debezium/connect:2.7
+    image: debezium/connect:2.7.3.Final
     ports:
      - 8083:8083
     links:
