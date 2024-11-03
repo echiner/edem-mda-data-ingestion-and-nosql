@@ -19,17 +19,17 @@ docker compose pull
 
 Find below the list components which we will be using:
 
-| Component  | Description | Docker Service | Port |
-| ------------- | ------------- | ------------- | ------------- |
-| **Apache NiFi**  | Data flow and integration tool | nifi  |  [8443](https://localhost:8443/nifi) |
-| **Kafka** | Distributed event streaming platform | kafka | 9092 |
-| **Zookeeper** | Coordination service for Kafka and other distributed systems | zookeeper | 2181, 2888, and 3888 |
-| **Kafka Connect** | Tool for scalable and reliable data streaming between Kafka and other systems | connect | 8083 |
-| **Kafka UI** | Web UI to manage Kafka topics and consumer groups | redpanda-console | 9000 |
-| **MySQL** | Relational database management system | mysql | 3306 |
-| **Adminer (MySQL UI)** | Web-based database management tool | adminer | 8090 |
-| **MongoDB** | NoSQL database system | mongo | 27017 |
-| **MongoDB Express - UI** | Web-based MongoDB administration tool | mongo-express | [8081](http://localhost:8081/) |
+| Component  | Description | Docker Service | Port | Credentials |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| **Apache NiFi**  | Data flow and integration tool | nifi  |  [8443](https://localhost:8443/nifi) | admin / ctsBtRBKHRAx69EqUghvvgEvjnaLjFEB |
+| **Kafka** | Distributed event streaming platform | kafka | 9092 | N/A |
+| **Zookeeper** | Coordination service for Kafka and other distributed systems | zookeeper | 2181, 2888, and 3888 | N/A |
+| **Kafka Connect** | Tool for scalable and reliable data streaming between Kafka and other systems | connect | 8083 | N/A |
+| **Kafka UI** | Web UI to manage Kafka topics and consumer groups | redpanda-console | [9000](http://localhost:9000/) | N/A |
+| **MySQL** | Relational database management system | mysql | 3306 | Debezium: mysqluser / mysqlpw <br/> Admin: root / debezium |
+| **Adminer (MySQL UI)** | Web-based database management tool | adminer | [8090](http://localhost:8090/) | *Ditto* |
+| **MongoDB** | NoSQL database system | mongo | 27017 | root / example |
+| **MongoDB Express - UI** | Web-based MongoDB administration tool | mongo-express | [8081](http://localhost:8081/) | admin / pass |
 
 Here is a view of the architecture we will be using:
 
@@ -54,7 +54,7 @@ Here is the list of exercises we will follow:
 * [**Exercise 13**: MongoDB - Aggregations & Projections](Exercises/Exercise13)
 * [**Exercise 14**: MongoDB - Indexes](Exercises/Exercise14)
 * [**Exercise 15**: Neo4j - Demo](Exercises/Exercise15)
-* [**Exercise 16**: End-to-end Project: Data Ingestion, CDC and NOSQL (Optional)](Exercises/Exercise16)
+* [**Exercise 16**: End-to-end Project: Data Ingestion, CDC and NOSQL](Exercises/Exercise16)
 
  **Optional exercises** are more advanced, and will be done during the class if we have time. Otherwise they will optional for the trainee to do as homework.
 

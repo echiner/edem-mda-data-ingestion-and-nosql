@@ -27,7 +27,11 @@ services:
     links:
      - zookeeper
     environment:
-     - ZOOKEEPER_CONNECT=zookeeper:2181
+     ZOOKEEPER_CONNECT: zookeeper:2181
+     KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT
+     KAFKA_LISTENERS: PLAINTEXT://kafka:9092
+     KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+
 
   mysql:
     image: debezium/example-mysql:2.7.3.Final
