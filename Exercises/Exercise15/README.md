@@ -1,4 +1,4 @@
-# Neo4j - Demo
+# Neo4j - Introduction (Optional)
 
 ## Introduction
 

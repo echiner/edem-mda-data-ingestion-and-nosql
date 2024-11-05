@@ -1,4 +1,4 @@
-# MongoDB - Basic Querying
+# MongoDB - Query flight data
 
 ## Introduction
 

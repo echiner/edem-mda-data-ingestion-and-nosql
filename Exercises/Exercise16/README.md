@@ -34,7 +34,7 @@ docker compose up -d
 
 In any case, given that we will go from MySQL to MongoDB (as in the diagram), you can start the components incrementally. Starting with MySQL and adminer.
 
-Also, before running any python script, make sure you install the requirements:
+Also, before running any python script, make sure you install the requirements (under the `scripts` folder):
 
 ```shell	
 pip install -r requirements.txt

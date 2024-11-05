@@ -10,9 +10,9 @@ In this exercise, we will work with the `listingsAndReviews` collection in the `
 
 
 ## Exercise
-The goal is to find the host_name of the host with the most total listings (*host.host_total_listings_count*).
+The goal is to find the host_name of the host with the most total listings (`host.host_total_listings_count`).
 
-- Find the host_name of the host with the most total listings (*host.host_total_listings_count*).
+- Find the host_name of the host with the most total listings (`host.host_total_listings_count`).
 - Tips, use:
     - find() with projection
     - sort()

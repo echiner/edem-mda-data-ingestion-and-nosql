@@ -49,11 +49,11 @@ Here is the list of exercises we will follow:
 * [**Exercise 8**: Debezium - Basic Change Data Capture](Exercises/Exercise08)
 * [**Exercise 9**: Debezium - Advanced Change Data Capture](Exercises/Exercise09)
 * [**Exercise 10**: Debezium - Data Transformations with SMT (Optional)](Exercises/Exercise10)
-* [**Exercise 11**: MongoDB - Basic Querying](Exercises/Exercise11)
+* [**Exercise 11**: MongoDB - Query flight data](Exercises/Exercise11)
 * [**Exercise 12**: MongoDB - Advanced Querying](Exercises/Exercise12)
 * [**Exercise 13**: MongoDB - Aggregations & Projections](Exercises/Exercise13)
 * [**Exercise 14**: MongoDB - Indexes](Exercises/Exercise14)
-* [**Exercise 15**: Neo4j - Demo](Exercises/Exercise15)
+* [**Exercise 15**: Neo4j - Introduction (Optional)](Exercises/Exercise15)
 * [**Exercise 16**: End-to-end Project: Data Ingestion, CDC and NOSQL](Exercises/Exercise16)
 
  **Optional exercises** are more advanced, and will be done during the class if we have time. Otherwise they will optional for the trainee to do as homework.
