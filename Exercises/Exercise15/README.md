@@ -2,7 +2,7 @@
 
 ## Introduction
 
-![Neo4j Logo](../../img/neo4j-logo.png)
+![Neo4j Logo](https://dist.neo4j.com/wp-content/uploads/20230926084108/Logo_FullColor_RGB_TransBG.svg)
 
 In this optional exercise we will be testing Neo4j: Graph database management system developed by Neo4j, Inc. Described by its developers as an ACID-compliant transactional database with native graph storage and processing.
 

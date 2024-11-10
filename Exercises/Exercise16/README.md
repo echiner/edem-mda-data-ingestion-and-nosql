@@ -15,9 +15,8 @@ In this exercise we will only cover partially the first point, i.e. replicate th
 
 ## Architecture
 
-```scss
-[MySQL] --(CDC)--> [Debezium] --(Change Events)--> [Message Broker (Kafka)] --> [Apache NiFi] --(inserts/updates/deletes)--> [MongoDB]
-```
+![Architecture](../../img/exercise16.png)
+
 
 - **MySQL**: Stores transactional data on orders.
 - **Debezium**: Captures row-level changes in the MySQL database and streams them to Kafka.
