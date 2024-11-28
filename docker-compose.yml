@@ -1,7 +1,7 @@
 services:
     
   nifi:
-    image: apache/nifi:latest
+    image: apache/nifi:1.28.1
     container_name: nifi
     restart: always
     ports:

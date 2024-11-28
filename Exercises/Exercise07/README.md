@@ -25,7 +25,7 @@ And **install the Debezium connector** in Kafka Connect:
 
 ```shell
 # If you are using Cywin, Linux or a Windows version of "curl"
-curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/ -d @Exercises\Exercise07\register-mysql.json
+curl -i -X POST -H "Accept:application/json" -H "Content-Type:application/json" http://localhost:8083/connectors/ -d @Exercises/Exercise07/register-mysql.json
 
 # If you are using PowerShell
 Invoke-RestMethod -Uri http://localhost:8083/connectors/ -Method POST -Infile 'Exercises\Exercise07\register-mysql.json' -ContentType 'application/json'
