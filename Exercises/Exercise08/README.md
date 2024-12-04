@@ -19,11 +19,13 @@ And then, in a different shell screen, **login to the MySQL CLI** (feel free to 
 
 ```shell
 # Modify records in the database via MySQL client (PowerShell)
-docker compose exec mysql bash -c "mysql -u $MYSQL_USER -p$MYSQL_PASSWORD inventory"
+docker compose exec mysql bash -c "mysql -u root inventory"
 
 # Modify records in the database via MySQL client (Command Line)
-docker compose exec mysql bash -c 'mysql -u ${MYSQL_USER} -p ${MYSQL_PASSWORD} inventory'
+docker compose exec mysql bash -c 'mysql -u root inventory'
 ```
+
+When asked for the password, use "debezium".
 
 ## Exercise
 

@@ -20,8 +20,8 @@ In this exercise we will not only move data (from HTTP to File), but also do som
 
 * Split the file, using the **SplitText** processor
   * Split every 100 rows
-* Rename the file, using the **UpdateAttribute** processor
-  * Example renaming: `EDEM-${filename}-${nextInt()}.txt`
+* Rename the file, using the **UpdateAttribute** processor (and `filename` attribute)
+  * Example renaming: `EDEM-${filename}-${nextInt()}.csv`
 
 # Resources
 

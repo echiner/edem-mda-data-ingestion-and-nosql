@@ -42,13 +42,13 @@ Now, let's start with the configuration of the processors. Here are the paramete
   * **Json Path Expression**: Select the JSON data you are interested in.
 * **PutMongo**: Store each individual flight into a MongoDB collection.
   * **Mongo URI**: Connection string for the MongoDB instance. FYI, host is "mongo", port is "27017", user is "root" and password is "example".
-  * **Mongo Database Name**: Database where the data will be stored (it will be autocreated).
-  * **Mongo Collection Name**: Collection (e.g. similar to table) where the data will be stored (it will be autocreated).
+  * **Mongo Database Name**: Database where the data will be stored (it will be autocreated in MongoDB).
+  * **Mongo Collection Name**: Collection (similar to table in SQL) where the data will be stored (it will be autocreated in MongoDB).
 * **EvaluateJsonPath**: Extract the arrival airport in order to control the process flow.
   * **Destination**: Select whether you want the new value to go into an attribute or the content.
   * Add a **new property** with a name (e.g. "arrival_airport") and in the value select the data you need from the JSON (in our case the IATA code for the arrival airport).
 * **UpdateAttribute**: Rename the file that will be stored locally.
-  * Add a **new property** to rename the file (see previous exercise as example) and rename the file with this format: "flight-[airport code]-[sequential number].json".
+  * Add a **new property** to rename the file (see previous exercise as example) and rename the file with this format: "flight-[airport code]-[sequential number].json". Replace [airport code] with the attribute retrieved before, and [sequential number] with the Expression Language to generate sequential numbers (see previous exercises).
 * **RouteOnAttribute**: Fork the flow depending on whether it is Madrid (MAD) or Barcelona (BCN).
   * Add **two new properties**, one for "madrid" and one for "barcelona". In the value, use the expression language to select that the airport is MAD or BCN.
 * **PutFile**: Store the file on different places depending on whether it is Madrid or Barcelona.

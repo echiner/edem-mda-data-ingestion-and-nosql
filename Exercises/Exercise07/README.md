@@ -24,12 +24,15 @@ docker compose up -d zookeeper kafka connect redpanda-console mysql adminer
 And **install the Debezium connector** in Kafka Connect:
 
 ```shell
-# If you are using Cywin, Linux or a Windows version of "curl"
+# If you are using Cywin, Mac, Linux or a Windows version of "curl"
 curl -i -X POST -H "Accept:application/json" -H "Content-Type:application/json" http://localhost:8083/connectors/ -d @Exercises/Exercise07/register-mysql.json
 
-# If you are using PowerShell
+# If you are using PowerShell in Windows
 Invoke-RestMethod -Uri http://localhost:8083/connectors/ -Method POST -Infile 'Exercises\Exercise07\register-mysql.json' -ContentType 'application/json'
 ```
+
+This will make a call to the Kafka Connect REST API and deploy the Debezium connector defined in `register-mysql.json`.
+
 Do some final checks:
 
 * Check that the connector has been created in the [Kafka UI](http://localhost:9000/overview) via the "Connectors" tab. You should see a connector named "inventory-connector" with status "RUNNING"

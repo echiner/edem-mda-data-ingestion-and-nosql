@@ -15,7 +15,7 @@ We will need the same consoles (or UIs) as in the previous exercise:
 docker compose exec kafka /kafka/bin/kafka-console-consumer.sh --bootstrap-server kafka:9092 --from-beginning --property print.key=true --topic dbserver1.inventory.customers
 
 # Modify records in the database via MySQL client
-docker compose exec mysql bash -c 'mysql -u $MYSQL_USER -p$MYSQL_PASSWORD inventory'
+docker compose exec mysql bash -c 'mysql -u root inventory'
 ```
 
 ## What to do
