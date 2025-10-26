@@ -9,7 +9,7 @@ In this exercise we will do some basic querying in MongoDB to the data loaded in
 For this exercise we use the generated data from exercise 04. Keep using the same MongoDB and its UI container instances. If you have deleted them, you can start them again with the following command:
 
 ```shell
-docker compose up -d nifi mongo mongo-express
+docker compose up -d nifi nifi-registry mongo mongo-express
 ```
 
 Import your saved template from the exercise 04 and run it to load the data into MongoDB.

@@ -11,7 +11,7 @@ The GDELT Project monitors the world's broadcast, print, and web news from nearl
 Launch Apache NiFi:
 
 ```shell
-docker compose up -d nifi
+docker compose up -d nifi nifi-registry
 ```
 
 ## Exercise
@@ -39,6 +39,7 @@ Some other considerations:
 # Resources
 
 * Apache NiFi (local): https://localhost:8443/nifi
+* Apache NiFi Registry (local): http://localhost:18080/nifi-registry/
 * Apache NiFi Documentation: https://nifi.apache.org/docs.html
-* Apache NiFi Expresion Language Guide: https://nifi.apache.org/docs/nifi-docs/html/expression-language-guide.html 
+* Apache NiFi Expresion Language Guide: https://nifi.apache.org/docs/nifi-docs/html/expression-language-guide.html
 * Data Source: https://www.gdeltproject.org/

@@ -1,7 +1,7 @@
 services:
-    
+
   nifi:
-    image: apache/nifi:1.28.1
+    image: apache/nifi:2.6.0
     container_name: nifi
     restart: always
     ports:
@@ -12,35 +12,48 @@ services:
     volumes:
       - ./data:/tmp/data
     user: "0:0"
-    
+
+  nifi-registry:
+    image: apache/nifi-registry:2.6.0
+    container_name: nifi-registry
+    restart: always
+    ports:
+      - 18080:18080
+    environment:
+      - SINGLE_USER_CREDENTIALS_USERNAME=admin
+      - SINGLE_USER_CREDENTIALS_PASSWORD=ctsBtRBKHRAx69EqUghvvgEvjnaLjFEB
+    volumes:
+      - ./nifi_registry/database:/opt/nifi-registry/nifi-registry-current/database
+      - ./nifi_registry/flow_storage:/opt/nifi-registry/nifi-registry-current/flow_storage
+    user: "0:0"
+
   zookeeper:
     image: debezium/zookeeper:2.7.3.Final
     ports:
-     - 2181:2181
-     - 2888:2888
-     - 3888:3888
+      - 2181:2181
+      - 2888:2888
+      - 3888:3888
 
   kafka:
     image: debezium/kafka:2.7.3.Final
     ports:
-     - 9092:9092
+      - 9092:9092
     links:
-     - zookeeper
+      - zookeeper
     environment:
-     ZOOKEEPER_CONNECT: zookeeper:2181
-     KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT
-     KAFKA_LISTENERS: PLAINTEXT://kafka:9092
-     KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
-
+      ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT
+      KAFKA_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
 
   mysql:
     image: debezium/example-mysql:2.7.3.Final
     ports:
-     - 3306:3306
+      - 3306:3306
     environment:
-     - MYSQL_ROOT_PASSWORD=debezium
-     - MYSQL_USER=mysqluser
-     - MYSQL_PASSWORD=mysqlpw
+      - MYSQL_ROOT_PASSWORD=debezium
+      - MYSQL_USER=mysqluser
+      - MYSQL_PASSWORD=mysqlpw
 
   adminer:
     image: adminer
@@ -51,16 +64,16 @@ services:
   connect:
     image: debezium/connect:2.7.3.Final
     ports:
-     - 8083:8083
+      - 8083:8083
     links:
-     - kafka
-     - mysql
+      - kafka
+      - mysql
     environment:
-     - BOOTSTRAP_SERVERS=kafka:9092
-     - GROUP_ID=1
-     - CONFIG_STORAGE_TOPIC=my_connect_configs
-     - OFFSET_STORAGE_TOPIC=my_connect_offsets
-     - STATUS_STORAGE_TOPIC=my_connect_statuses
+      - BOOTSTRAP_SERVERS=kafka:9092
+      - GROUP_ID=1
+      - CONFIG_STORAGE_TOPIC=my_connect_configs
+      - OFFSET_STORAGE_TOPIC=my_connect_offsets
+      - STATUS_STORAGE_TOPIC=my_connect_statuses
 
   redpanda-console:
     image: docker.redpanda.com/redpandadata/console:v2.3.1
@@ -82,10 +95,10 @@ services:
       - kafka
 
   mongo:
-    image: mongo
+    image: mongo:8.0.6
     restart: always
     ports:
-      - 27017:27017    
+      - 27017:27017
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
@@ -93,7 +106,7 @@ services:
       - data:/data/db
 
   mongo-express:
-    image: mongo-express
+    image: mongo-express:latest
     restart: always
     ports:
       - 8081:8081
@@ -104,4 +117,4 @@ services:
 
 volumes:
   data:
-  
+  nifi_registry:

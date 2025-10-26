@@ -1,0 +1,32 @@
+# =============================================================================
+# .gitignore for Data Ingestion and NoSQL Course
+# =============================================================================
+#
+# This .gitignore file tells Git which files and folders
+# to ignore when tracking changes in your repository. This is crucial for:
+#
+# 1. Preventing sensitive data from being accidentally committed
+# 2. Avoiding large files that would make the repository heavy
+# 3. Keeping the repository clean and focused on code/configuration
+#
+# HOW TO READ THIS FILE:
+# - Lines starting with # are comments (like this one)
+# - Each pattern on a line tells Git to ignore matching files/folders
+# - Patterns ending with / ignore directories
+# - Patterns starting with ! are exceptions (don't ignore these)
+# - * is a wildcard that matches any characters
+#
+# =============================================================================
+
+data/                   # Main data directory for mounted data files for NiFi exercises
+nifi-registry/          # Directory containing NiFi Registry data
+
+!data/in/testfile.csv   # Exception: Sample CSV file required for NiFi exercises
+
+# -----------------------------------------------------------------------------
+# Additional Common Ignores
+# -----------------------------------------------------------------------------
+
+__pycache__/            # Python bytecode cache
+*.env                   # Any file ending in .env
+.vscode/                # Visual Studio Code settings

@@ -8,10 +8,10 @@ HTTP service --> NiFi --> File
 
 ## Pre-requisites
 
-Launch Apache NiFi:
+Launch Apache NiFi and Apache NiFi Registry with Docker Compose:
 
 ```shell
-docker compose up -d nifi
+docker compose up -d nifi nifi-registry
 ```
 
 ## Exercise
@@ -33,5 +33,6 @@ Some tips:
 # Resources
 
 * Apache NiFi (local): https://localhost:8443/nifi
+* Apache NiFi Registry (local): http://localhost:18080/nifi-registry/
 * Apache NiFi Documentation: https://nifi.apache.org/docs.html
 * Valencia Open Data: http://gobiernoabierto.valencia.es

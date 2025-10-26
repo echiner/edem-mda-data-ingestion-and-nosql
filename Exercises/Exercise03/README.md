@@ -8,10 +8,10 @@ HTTP service --> NiFi --> File
 
 ## Pre-requisites
 
-Launch Apache NiFi:
+Launch Apache NiFi and Apache NiFi Registry with Docker Compose:
 
 ```shell
-docker compose up -d nifi
+docker compose up -d nifi nifi-registry
 ```
 
 ## Exercise
@@ -26,6 +26,7 @@ In this exercise we will not only move data (from HTTP to File), but also do som
 # Resources
 
 * Apache NiFi (local): https://localhost:8443/nifi
+* Apache NiFi Registry (local): http://localhost:18080/nifi-registry/
 * Apache NiFi Documentation: https://nifi.apache.org/docs.html
-* Apache NiFi Expresion Language Guide: https://nifi.apache.org/docs/nifi-docs/html/expression-language-guide.html 
-* Data Source: https://www.valencia.es/dadesobertes/es/dataset/?id=textos-dels-carrers 
+* Apache NiFi Expresion Language Guide: https://nifi.apache.org/docs/nifi-docs/html/expression-language-guide.html
+* Data Source: https://www.valencia.es/dadesobertes/es/dataset/?id=textos-dels-carrers

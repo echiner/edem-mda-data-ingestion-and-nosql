@@ -21,10 +21,10 @@ Setup a free account in AviationStack:
 * Select the "Free" plan and click on "SIGN UP"
 * Fill out the form
 
-Launch Apache NiFi and MongoDB:
+Launch Apache NiFi, Apache NiFi Registry, MongoDB and Mongo Express with Docker Compose:
 
 ```shell
-docker compose up -d nifi mongo mongo-express
+docker compose up -d nifi nifi-registry mongo mongo-express
 ```
 
 
@@ -32,7 +32,7 @@ docker compose up -d nifi mongo mongo-express
 
 For this exercise, given the complexity we have provided a template that includes all the necessary processors. You only need to configure and connect them.
 
-First, load and insert the template called `aviationstack-template.xml`. Here you have more info on [importing templates](https://nifi.apache.org/docs/nifi-docs/html/user-guide.html#Import_Template).
+First, import a new flow in the [NiFi Regisitry](http://localhost:18080/nifi-registry/) by uploading the template called `aviationstack-template.json`. Then, go back to NiFi, and import the flow by clicking on the "Import from Registry" button in the main toolbar.
 
 Now, let's start with the configuration of the processors. Here are the parameters you will need to fill:
 
@@ -66,7 +66,7 @@ To finish, run the flow and confirm that the data is stored in both places:
 
 **IMPORTANT TIP**: Take a look at the documentation of the different processors in order to understand both the configuration parameters and the relationships (outputs). For example, [SplitJson](https://nifi.apache.org/docs/nifi-docs/components/org.apache.nifi/nifi-standard-nar/1.12.1/org.apache.nifi.processors.standard.SplitJson/).
 
-**Stop the flow**: Make sure to stop the flow once you have verified that everything is working as expected and the data is being stored correctly. Otherwise, you will be consuming resources and potentially hitting the API limits. 
+**Stop the flow**: Make sure to stop the flow once you have verified that everything is working as expected and the data is being stored correctly. Otherwise, you will be consuming resources and potentially hitting the API limits.
 
 **Save the template**: Once you have finished, resave your Nifi flow with your added configurations as a template. This will allow you to reuse it for the [Exercise 10](../Exercise11/README.md).
 
@@ -79,6 +79,12 @@ Here is how the flow should more or less look like once finished:
 # Resources
 
 * Apache NiFi (local): https://localhost:8443/nifi
+* Apache NiFi Registry (local): http://localhost:18080/nifi-registry/
 * Apache NiFi Documentation: https://nifi.apache.org/docs.html
-* Apache NiFi Expresion Language Guide: https://nifi.apache.org/docs/nifi-docs/html/expression-language-guide.html 
-* AviationStack API Documentation: https://aviationstack.com/documentation 
+* Apache NiFi Expresion Language Guide: https://nifi.apache.org/docs/nifi-docs/html/expression-language-guide.html
+* AviationStack API Documentation: https://aviationstack.com/documentation
+
+# Notes
+
+* Remember that the free plan of AviationStack has a limit of 100 requests per month. So be careful when testing your flow.
+* If you use an older version of NiFi (< 2.0), JSON templates are not supported. In that case, load and insert the template called `aviationstack-template-deprecated.xml`. Here you have more info on [importing templates](https://nifi.apache.org/docs/nifi-docs/html/user-guide.html#Import_Template).

@@ -6,10 +6,10 @@ This will be you first exercise with Apache NiFi, and it is a simple workflow to
 
 ## Pre-requisites
 
-Launch Apache NiFi:
+Launch Apache NiFi and Apache NiFi Registry with Docker Compose:
 
 ```shell
-docker compose up -d nifi
+docker compose up -d nifi nifi-registry
 ```
 
 ## Exercise
@@ -30,4 +30,5 @@ Now follow the steps as the teacher explains it.
 # Resources
 
 * Apache NiFi (local): https://localhost:8443/nifi
+* Apache NiFi Registry (local): http://localhost:18080/nifi-registry/
 * Apache NiFi Documentation: https://nifi.apache.org/docs.html
