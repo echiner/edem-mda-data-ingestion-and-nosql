@@ -19,13 +19,17 @@
 # =============================================================================
 
 data/                   # Main data directory for mounted data files for NiFi exercises
-nifi-registry/          # Directory containing NiFi Registry data
+nifi_registry/          # Directory containing NiFi Registry data
 
 !data/in/testfile.csv   # Exception: Sample CSV file required for NiFi exercises
 
 # -----------------------------------------------------------------------------
 # Additional Common Ignores
 # -----------------------------------------------------------------------------
+
+# Exercise-specific files (JSON configs generated during exercises)
+Exercises/Exercise09/register-mysql-v2.json
+Exercises/Exercise09/register-mysql-v3.json
 
 __pycache__/            # Python bytecode cache
 *.env                   # Any file ending in .env
