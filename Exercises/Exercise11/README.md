@@ -28,7 +28,7 @@ First, connect to the MongoDB shell within your container:
 
 ```bash
 shell> docker ps
-shell> docker exec -it <container_id> mongosh -u root -p example --authenticationDatabase admin
+shell> docker exec -it <container_id> mongosh -u root -p example
 ```
 
 Then, try some of the following queries in the MongoDB shell to get familiar with the data:

@@ -8,8 +8,8 @@ into a MongoDB collection efficiently using bulk insert operations.
 
 Usage
 -----
-1. Install the required dependency:
-   pip install pymongo
+1. Install the required dependencies:
+   pip install pymongo python-dateutil
 
 2. Update the connection details and file path below.
 
@@ -18,7 +18,25 @@ Usage
 """
 
 from bson import json_util
+from dateutil import parser
 from pymongo import InsertOne, MongoClient
+
+
+def convert_timestamps(obj):
+    """
+    Helper: recursively convert ISO timestamps to datetime objects
+    """
+    if isinstance(obj, dict):
+        return {k: convert_timestamps(v) for k, v in obj.items()}
+    elif isinstance(obj, list):
+        return [convert_timestamps(i) for i in obj]
+    elif isinstance(obj, str):
+        try:
+            return parser.isoparse(obj)
+        except ValueError:
+            return obj
+    else:
+        return obj
 
 
 class MongoFlightIngestor:
@@ -59,9 +77,10 @@ class MongoFlightIngestor:
                 for line in file:
                     if line.strip():
                         data.append(json_util.loads(line))
+            converted = convert_timestamps(data)
 
-        print(f"Loaded {len(data)} records from file.")
-        return data
+        print(f"Loaded {len(converted)} records from file.")
+        return converted
 
     def bulk_insert(self, records):
         """
